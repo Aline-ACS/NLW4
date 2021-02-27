@@ -14,7 +14,7 @@
     background-color: var(--white);
     box-shadow: 0 0 60px rgba(0, 0,0, 0.05);
     border-radius: 5px;
-    font-size: 8.5rem;
+    font-size: 6.5rem;
     text-align: center;
 }
 
@@ -37,20 +37,40 @@
 
 .countDownButton {
     width: 100%;
-    height: 5rem;
+    height: 4rem;
     margin-top: 2rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 0;
+    /* border: 0; */
     border-radius: 5px;
     background-color: var(--blue);
     color: var(--white);
     font-size: 1.25rem;
     font-weight: 600;
     transition: background-color 0.2s;
+    border: 1px solid var(--title);
 }
 
-.countDownButton:hover {
+.countDownButton:not(:disabled):hover {
     background-color: var(--blue-dark);
+    border: 1px solid var(--title);
+}
+
+.countDownButtonActive {
+    background-color: var(--white);
+    color: var(--title);
+    border: 1px solid var(--red);
+}
+
+.countDownButtonActive:not(:disabled):hover {
+    background-color: var(--red);
+    color: var(--white);
+    border: 1px solid var(--title);
+}
+
+.countDownButton:disabled {
+    background-color: var(--white);
+    cursor: not-allowed;
+    color: var(--text);
 }
